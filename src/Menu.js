@@ -27,11 +27,12 @@ class Menu extends Phaser.Scene {
         this.add.text(game.config.width/2, game.config.height/2-20, 'Move with WASD', menuConfig).setOrigin(0.5);
         this.add.text(game.config.width/2, game.config.height/2 + 30, 'Don\'t let the slugs eat the allergen', menuConfig).setOrigin(0.5);
         this.add.text(game.config.width/2, game.config.height/2 + 65, 'free halal chicken thighs!', menuConfig).setOrigin(0.5);
+        this.add.text(game.config.width/2, game.config.height/2 + 100, 'Drink coffee for speed', menuConfig).setOrigin(0.5);
 
         
         menuConfig.backgroundColor = '#E4E5D4';
         menuConfig.color = '#000';
-        this.add.text(game.config.width/2, game.config.height/2 + borderUISize + borderPadding + 80, 'Press [SPACE] to sart', menuConfig).setOrigin(0.5);
+        this.add.text(game.config.width/2, game.config.height/2 + borderUISize + borderPadding + 125, 'Press [SPACE] to sart', menuConfig).setOrigin(0.5);
 
         keySPACE = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE)
     }
