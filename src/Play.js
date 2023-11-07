@@ -22,6 +22,21 @@ class Play extends Phaser.Scene {
 
         this.background = this.add.tileSprite(0, 0, 600, 400, 'background').setOrigin(0, 0)
 
+        let timerConfig = {
+            fontFamily: 'Courier',
+            fontSize: '28px',
+            backgroundColor: '#F3B141',
+            color: '#843605',
+            align: 'right', 
+            padding: {
+                top: 5,
+                bottom: 5
+            },
+            fixedWidth: 100
+        }
+        this.start = this.time.now
+        this.timerRight = this.add.text(game.config.width - 100, borderUISize + borderPadding * 2, Math.floor((this.time.now - this.start)/1000), timerConfig)
+
         this.anims.create({ 
             key: 'default', 
             frames: this.anims.generateFrameNames('character', { 
@@ -109,6 +124,7 @@ class Play extends Phaser.Scene {
 
     update() {
         if(!this.gameOver){
+            this.timerRight.text = Math.floor((this.time.now - this.start)/1000)
             let playerVector = new Phaser.Math.Vector2(0, 0)
             if(cursors.left.isDown){
                 playerVector.x = -1
